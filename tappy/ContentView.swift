@@ -42,6 +42,7 @@ struct ContentView: View {
 //                        .clipped() // Ensure the image is clipped to its frame
                         .accessibilityLabel("Illustration of a group of people sharing what they are seeing to others. ")
                     
+                    // ⭐️ TEXT CONTAINER (THE "INVISIBLE BOX")
                     VStack(spacing: 15) {
                         
                         // ⭐️ App Logo
@@ -52,17 +53,25 @@ struct ContentView: View {
                             .shadow(radius: 5)
                             .accessibilityLabel("Tappy") // Alt text as requested
                         
-                        // Tagline (UPDATED: EXTREMELY SHORT)
-                        // Tappy: Inclusive dining. Autonomy. (4 words)
-                        Text("**Tappy: Inclusive dining. Autonomy.**")
-                            .font(.headline) // Using a smaller font size to prevent wrapping
-                            .foregroundColor(primaryBlue)
+                        // Tagline (ORIGINAL TEXT 1)
+                        Text("Your independent dining")
+                            .font(.title2)
+                            .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
-                        
-                        // REMOVED: The original long descriptive text to adhere to the less than 10 words constraint
-                        
+                        Text("experience starts here.")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                            .multilineTextAlignment(.center)
+
+//                        Text("Tappy transforms physical restaurant menus into fully accessible digital experiences, giving you total autonomy to explore and engage with the menu.")
+//                            .font(.body) // Use .body for better readability of long text
+//                            .foregroundColor(.primary)
+//                            .multilineTextAlignment(.center)
+//                            .fixedSize(horizontal: false, vertical: true)
+//                            .lineLimit(nil)
                     }
-                    .padding(.horizontal) // Add horizontal padding to the text block
+                    .frame(maxWidth: 300) // ⬅️ THIS IS THE INVISIBLE BOX/FIXED FRAME
+                    .padding(.horizontal) // Retain some padding outside the fixed frame
                     
                     Spacer()
                     
